@@ -24,3 +24,5 @@
 //// view todo in each project
 //// expand single todo
 //// delete a todo
+
+import "./styles/index.css"
