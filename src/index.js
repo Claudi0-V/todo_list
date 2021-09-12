@@ -1,29 +1,38 @@
-//to do app
-// start from Data to Interface (GUI);
-
-
-/* TODO SECTION*/
-//gonna generate (Create) single todo (obj)
-//// each obj gonna have (title, description, dueDate and priority.)
-// todo gonna have date, need to find way to work with date
-
-// gonna have to have projects, each project gonna have it's own todos
 // has to have default todo
-
-// have the option to set a todo as complete and be able to change the todo priority
-
-
-/* STORAGE SECTION*/
-//save and retrieve todo
-//modify singe todo edit;
-//modify project when todo is edit, removed or added;
-
-
-/* DISPLAY SECTION*/
-// view all projects
-//// view todo in each project
-//// expand single todo
-//// delete a todo
 
 import "./styles/index.css"
 import { compareAsc, format } from 'date-fns'
+import { TodoCreator, todoProject } from './modules/todoApp.js'
+
+let thisProject = 'first project';
+const completeProject = {
+	'first project': [{
+						title: "chores",
+						date: "2021-10-7",
+						priority: "high",
+						description: "test"},
+					   {
+					   	title: "2chores",
+					   	date: "22021-10-7",
+						priority: "2high",
+						description: "tes2t",
+					   }],
+	'second project': [{
+						title: "chores",
+						date: "2021-10-7",
+						priority: "high",
+						description: "test"},
+					   {
+					   	title: "2chores",
+					   	date: "22021-10-7",
+						priority: "2high",
+						description: "tes2t",
+					   }],
+};
+let newItem = new TodoItem({title: 'num', date: '2021-10-7', priority: 'high', description:'test'});
+let otherItem = new TodoItem({title: '3', date: '22021-10-7', priority: '2high', description:'tes2t'});
+completeProject[thisProject].push(newItem);
+completeProject[thisProject].push(otherItem);
+console.log(Object.keys(completeProject))
+todoProject.removeProject({toDoData: completeProject, projectName: thisProject})
+console.log(Object.keys(completeProject))
