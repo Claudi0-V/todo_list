@@ -2,37 +2,20 @@
 
 import "./styles/index.css"
 import { compareAsc, format } from 'date-fns'
-import { TodoCreator, todoProject } from './modules/todoApp.js'
-
+import { createTodoItem, todoProject } from './modules/todoApp.js'
+import { Storage } from './modules/storage.js'
 let thisProject = 'first project';
-const completeProject = {
-	'first project': [{
-						title: "chores",
-						date: "2021-10-7",
-						priority: "high",
-						description: "test"},
-					   {
-					   	title: "2chores",
-					   	date: "22021-10-7",
-						priority: "2high",
-						description: "tes2t",
-					   }],
-	'second project': [{
-						title: "chores",
-						date: "2021-10-7",
-						priority: "high",
-						description: "test"},
-					   {
-					   	title: "2chores",
-					   	date: "22021-10-7",
-						priority: "2high",
-						description: "tes2t",
-					   }],
-};
-let newItem = new TodoItem({title: 'num', date: '2021-10-7', priority: 'high', description:'test'});
-let otherItem = new TodoItem({title: '3', date: '22021-10-7', priority: '2high', description:'tes2t'});
-completeProject[thisProject].push(newItem);
-completeProject[thisProject].push(otherItem);
-console.log(Object.keys(completeProject))
-todoProject.removeProject({toDoData: completeProject, projectName: thisProject})
-console.log(Object.keys(completeProject))
+const toDo = Storage.openStorage()
+
+console.log(toDo);
+let newItem = new createTodoItem({title: 'num', date: '2021-10-7', priority: 'high', description:'test'});
+let otherItem = new createTodoItem({title: '3', date: '22021-10-7', priority: '2high', description:'tes2t'});
+let theOldToDo =  {title: "2chores", date: "22021-10-7", priority: "2high", description: "tes2t"};
+let theNewToDo = {title: "baz", date: "900-10-7", priority: "medium", description: "test2"};
+
+toDo[thisProject].push(newItem);
+toDo[thisProject].push(otherItem);
+
+
+toDoProject.editTodo({toDoData: toDo, projectName: thisProject, oldToDo: theOldToDo, newToDo: theNewToDo})
+console.log(toDo[thisProject][1])
