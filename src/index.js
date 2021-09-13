@@ -18,5 +18,7 @@ toDo[thisProject].push(newItem);
 toDo[thisProject].push(otherItem);
 
 
-toDoProject.editTodo({toDoData: toDo, projectName: thisProject, oldToDo: theOldToDo, newToDo: theNewToDo})
+todoProject.editTodo({toDoData: toDo, projectName: thisProject, oldToDo: theOldToDo, newToDo: theNewToDo})
 console.log(toDo[thisProject][1])
+
+UI.createTop()
