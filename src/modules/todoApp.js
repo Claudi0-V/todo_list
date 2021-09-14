@@ -8,10 +8,10 @@ class createTodoItem {
 }
 
 class todoProject {
+	//ok
+	static createNewProject = ({toDoData, projectName}) =>  toDoData[projectName] = {};
 
-	static createNewProject = ({toDoData, projectName}) =>  toDoData[projectName] = [];
-
-	static addInProject = ({toDoData, projectName, newToDo}) => toDoData[projectName].push(newTodo);
+	static addInProject = ({toDoData, projectName, UniqueID,newToDo}) => toDoData[projectName][UniqueID] = newToDo;
 	
 	static removeProject = ({toDoData, projectName}) =>	delete toDoData[projectName];
 

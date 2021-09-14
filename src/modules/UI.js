@@ -15,7 +15,21 @@ class UI {
 		header.append(h1);
 		docBody.append(header);
 	}
+
+	static createProject = ({project}) => {
+		return 0
+	}
+
+	static createTodoList = ({todo}) => {
+		console.table(todo)
+		for (let task in todo) {
+			console.log(task," : ", todo[task]);
+
+		}
+	}
 }
+
+
 
 
 export { UI }
