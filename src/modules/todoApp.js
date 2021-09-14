@@ -8,27 +8,17 @@ class createTodoItem {
 }
 
 class todoProject {
-	//ok
+	
 	static createNewProject = ({toDoData, projectName}) =>  toDoData[projectName] = {};
-	//ok
+	
 	static addInProject = ({toDoData, projectName, UniqueID, newToDo}) => toDoData[projectName][UniqueID] = newToDo;
-	//ok
+	
 	static removeProject = ({toDoData, projectName}) =>	delete toDoData[projectName];
+	
+	static removeFromProject = ({toDoData, projectName, UniqueID}) => delete toDoData[projectName][UniqueID]
 
-	static todoIndex = (toDoData, projectName, ToDo) => {
-		let index = toDoData[projectName].findIndex(s => s.title === ToDo.title && s.dueDate === ToDo.dueDate);
-		return index;
-	}
-
-	static removeFromProject = ({toDoData, projectName, ToDo}) => {
-		let index = todoProject.todoIndex(toDoData, projectName, ToDo);
-		return toDoData[projectName].splice(index, 1);
-	}
-
-	static editTodo = ({toDoData, projectName, oldToDo, newToDo}) => {
-		let index = todoProject.todoIndex(toDoData, projectName, oldToDo);
-		return toDoData[projectName][index] = newToDo;
-	}
+	//
+	static editTodo = ({toDoData, projectName, UniqueID, newToDo}) => toDoData[projectName][UniqueID] = newToDo;
 }
 
 

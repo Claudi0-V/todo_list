@@ -15,7 +15,7 @@ const toDo = {
 }
 			 
 			//	0 	1 				2
-console.table(toDo['firstProject']['1f1UniqueID']);
+//console.table(toDo['firstProject']['1f1UniqueID']);
 let newItem = new createTodoItem({title: 'num', dueDate: '2021-10-7', priority: 'high', description:'test'});
 let otherItem = new createTodoItem({title: '3', dueDate: '22021-10-7', priority: '2high', description:'tes2t'});
 let theOldToDo =  {title: "2chores", dueDate: "22021-10-7", priority: "2high", description: "tes2t"};
@@ -25,7 +25,7 @@ todoProject.createNewProject({toDoData: toDo, projectName: 'secondProject'});
 todoProject.addInProject({toDoData: toDo, projectName: 'secondProject',UniqueID: '2f2UniqueID', newToDo: newItem})
 
 console.table(toDo)
-todoProject.removeProject({toDoData:toDo, projectName:'secondProject'})
+todoProject.removeFromProject({toDoData: toDo, projectName: 'firstProject', UniqueID:'1f1UniqueID' })
 console.log('removing second')
 console.table(toDo)
 
