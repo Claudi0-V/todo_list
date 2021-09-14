@@ -10,9 +10,9 @@ class createTodoItem {
 class todoProject {
 	//ok
 	static createNewProject = ({toDoData, projectName}) =>  toDoData[projectName] = {};
-
-	static addInProject = ({toDoData, projectName, UniqueID,newToDo}) => toDoData[projectName][UniqueID] = newToDo;
-	
+	//ok
+	static addInProject = ({toDoData, projectName, UniqueID, newToDo}) => toDoData[projectName][UniqueID] = newToDo;
+	//ok
 	static removeProject = ({toDoData, projectName}) =>	delete toDoData[projectName];
 
 	static todoIndex = (toDoData, projectName, ToDo) => {
