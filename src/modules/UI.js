@@ -1,12 +1,6 @@
-/* DISPLAY SECTION*/
-// view all projects
-//// view todo in each project
-//// expand single todo
-//// delete a todo
 let docBody = document.querySelector('body');
 
-
-class UI {
+class InterfaceCreation {
 	
 	static createTop = () => {
 		let header = document.createElement('header');
@@ -14,6 +8,19 @@ class UI {
 		h1.textContent = 'ToDoList';
 		header.append(h1);
 		docBody.append(header);
+	}
+
+	static createTodoArea = () => {
+		let main = document.createElement('main');
+		docBody.append(main)
+	}
+
+	static createAddProject = () => {
+		let main = document.querySelector('main')
+		let plusDiv = document.createElement('div');
+		plusDiv.setAttribute('id', 'plus-button');
+		plusDiv.textContent = '+';
+		main.append(plusDiv)
 	}
 
 	static createProject = ({project}) => {
@@ -30,6 +37,9 @@ class UI {
 }
 
 
+class InterfaceManipulation {
+
+}
 
 
-export { UI }
+export { InterfaceCreation, InterfaceManipulation }
