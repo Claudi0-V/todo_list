@@ -1,8 +1,9 @@
 import './styles/index.css';
 import { compareAsc, format } from 'date-fns';
-import { createTodoItem, todoProject } from './modules/todoApp.js';
+import { createTodoItem, todoProject } from './modules/todoProject.js';
 import { Storage } from './modules/storage.js';
 import { InterfaceCreation } from './modules/UI.js';
+import { createTodoItem } from. '/modules/todoItem.js'
 
 const toDo = Storage.openStorage();
 
