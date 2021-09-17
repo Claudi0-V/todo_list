@@ -7,4 +7,4 @@ class createTodoItem {
   }
 }
 
-export default createTodoItem
+export { createTodoItem };

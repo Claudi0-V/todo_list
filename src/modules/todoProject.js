@@ -14,4 +14,4 @@ class todoProject {
     toDoData[projectName][UniqueID] = newToDo;
 }
 
-export { createTodoItem, todoProject };
+export { todoProject };

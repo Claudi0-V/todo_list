@@ -68,5 +68,15 @@ section {
 	font-size: 2rem;
 	padding: 5px;
 	border: 1px solid white;
+}
 
+.projectDivName {
+	width: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.three-dots {
+	display: block;
+    cursor: pointer;
 }

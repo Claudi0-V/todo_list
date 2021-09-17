@@ -29,4 +29,4 @@ class Storage {
   static setStorage = (todo) => localStorage.setItem('todo', JSON.stringify(todo));
 }
 
-export default Storage;
+export { Storage };
